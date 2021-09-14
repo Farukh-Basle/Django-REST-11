@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+     Employee Detail
+{% endblock %}
+
+{% block body %}
+     {% if employee %}
+         <ol>
+            <li>Employee Number is : {{ employee.eno }}</li>
+            <li>Employee Name is : {{ employee.ename }}</li>
+            <li>Employee Salary is : {{ employee.salary }}</li>
+            <li>Employee Created time is : {{ employee.created }}</li>
+            <li>Employee Modified time is : {{ employee.modified }}</li>
+         </ol>
+     {% else %}
+        <h2>{{ error }}</h2>
+     {% endif %}
+{% endblock %}

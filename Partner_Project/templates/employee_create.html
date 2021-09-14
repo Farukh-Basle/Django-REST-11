@@ -1,0 +1,27 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+     Employee Create
+{% endblock %}
+
+{% block body %}
+     {% if form %}
+         <form method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <input type="submit" value="Create" class="btn btn-success"
+                   style="margin-left: 70px">
+            <input type="reset" value="Clear" class="btn btn-danger">
+         </form>
+
+     {% elif data %}
+         <h2>{{ data }}</h2>
+     {% else %}
+         <h2>{{ error }}</h2>
+     {% endif %}
+{% endblock %}

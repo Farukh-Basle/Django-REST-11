@@ -1,0 +1,46 @@
+
+
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+     Employee Update
+{% endblock %}
+
+{% block body %}
+     {% if form %}
+        <form method="POST">
+           {% csrf_token %}
+           <table>
+               <tr>
+                   <th>Eno</th>
+                   <td><input type="number" value="{{ form.eno }}" name="eno" readonly></td>
+               </tr>
+
+                <tr>
+                   <th>Ename</th>
+                   <td><input type="text" value="{{ form.ename }}" name="ename"></td>
+               </tr>
+                <tr>
+                   <th>Salary</th>
+                   <td><input type="number" value="{{ form.salary }}" name="salary"></td>
+               </tr>
+
+               <tr>
+                   <th></th>
+                   <td><input type="submit" value="Update" class="btn btn-success"></td>
+               </tr>
+
+           </table>
+        </form>
+
+     {% elif updated %}
+         <h2>{{ updated }}</h2>
+
+     {% else %}
+         <h2>{{ error }}</h2>
+
+     {% endif %}
+{% endblock %}
